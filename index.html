@@ -10,7 +10,7 @@
             position: relative;
             margin: 0 auto;
             padding: 2rem 0;
-            max-width: 600px;
+            max-width: 900px;
             }
             .timeline::before {
             content: '';
@@ -26,7 +26,7 @@
             position: relative;
             margin: 2rem 0;
             }
-            .timeline-item .timeline-marker {
+            .timeline-marker {
             position: absolute;
             left: 50%;
             width: 20px;
@@ -36,18 +36,35 @@
             transform: translateX(-50%);
             top: 0;
             }
-            .timeline-item .timeline-content {
+            .timeline-content {
             position: relative;
-            width: 75%;
+            width: 45%;
             padding: 1rem;
             background: #f8f9fa;
             border-radius: .5rem;
             }
+            /* Alternate left/right on desktop */
             .timeline-item:nth-child(odd) .timeline-content {
-            left: -35%;
+            left: 0;
             }
             .timeline-item:nth-child(even) .timeline-content {
             left: 55%;
+            }
+
+            /* 📱 Mobile responsiveness */
+            @media (max-width: 768px) {
+            .timeline::before {
+                left: 10px; /* move line to the side */
+            }
+            .timeline-marker {
+                left: 10px;
+                transform: none;
+            }
+            .timeline-content {
+                width: 100%;
+                left: 0 !important;
+                margin-left: 2rem; /* spacing from line */
+            }
             }
         </style>
 
@@ -99,87 +116,63 @@
             <div class="container">
                 <h3 class="text-center"><strong>My Career</strong></h3>
                 <div class="timeline">
-                    
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content shadow">
-                                <h5>2024 - Innovative Health Diagnostic</h5>
-                                <strong>Data Entry Specialist</strong>
-                                <p> 
-                                    ● Data Verification -  ensuring logs are accurate, catching mismatched information, and reporting errors.
-                                </p>
-                                <p> 
-                                    ● Document Management - keeping electronic records of test orders and related documents organized.
-                                </p>
-                                <p> 
-                                    ● In audits and assist in implementing corrective actions when needed.
-                                </p>
-                                <p> 
-                                    ● Reporting discrepancies.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content shadow">
-                                <h5>2025 - Joyce & Diana(Globalinens Worldwide Inc.)</h5>
-                                <strong>Warehouse Encoder/Line Leader</strong>
-                                <p> 
-                                    ● Warehouse Line Leader in Raw Materials Department.
-                                </p>
-                                <p> 
-                                    ● Encoding inbound and outbound shipments, inventory movements and other warehouse transactions into spreadsheet and ERP system (ODOO).
-                                </p>
-                                <p> 
-                                    ● System updates to ensure the warehouse management system is up-to-date with accurate and timely information.
-                                </p>
-                                <p> 
-                                    ● Managing and organizing important documents, receipts, and other records related to warehouse transactions.
-                                </p>
-                                <p> 
-                                    ● Receiving imported goods or raw materials to the warehouse.
-                                </p>
-                                <p> 
-                                    ● Internal driver, transferring from Factory to Factory.
-                                </p>
-                                <div class="row">
-                                    <div class="col">
-                                        <img src="jd-1.jpg" alt="Profile Picture" class="img-fluid"  width="400px" height="400px">
-                                    </div>
-                                    <div class="col">
-                                        <img src="jd-2.jpg" alt="Profile Picture" class="img-fluid" width="400px" height="400px">
-                                    </div>
-                                </div>
-                                <div>
-                                    <img src="jd-3.jpg" alt="Profile Picture" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                        
-                            <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content shadow">
-                                <h5>2026 - OJT: Biñan City Hall</h5>
-                                <strong>Intern</strong>
-                                <p> 
-                                    ● Programmer - updates and improvements for the project "Document Tracking System".
-                                </p>
-                                <p> 
-                                    ● Tech Support
-                                </p>
-                                <p> 
-                                    ● Required Hours: 486
-                                </p>
-                                <div>
-                                    <i>Image: screenshot of the project "Document Tracking System"</i>
-                                    <img src="docu.jpg" alt="Profile Picture" class="img-fluid" width="400px" height="400px">
-                                </div>
-                            </div>
-                        </div>
-                    
+
+                <!-- Example Item -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content shadow">
+                    <h5>2024 - Innovative Health Diagnostic</h5>
+                    <strong>Data Entry Specialist</strong>
+                    <p>● Data Verification - ensuring logs are accurate, catching mismatched information, and reporting errors. </p>
+                    <p>● Document Management - keeping electronic records of test orders and related documents organized. </p>
+                    <p>● In audits and assist in implementing corrective actions when needed. </p>
+                    <p>● Reporting discrepancies. </p>
                     </div>
-                
+                </div>
+
+                <!-- Example with images -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content shadow">
+                    <h5>2025 - Joyce & Diana (Globalinens)</h5>
+                    <strong>Warehouse Encoder/Line Leader</strong>
+                    <p>● Warehouse Line Leader in Raw Materials Department.</p>
+                    <p>● Encoding inbound and outbound shipments, inventory movements and other warehouse transactions into spreadsheet and ERP system (ODOO). </p>
+                    <p>● System updates to ensure the warehouse management system is up-to-date with accurate and timely information. </p>
+                    <p>● Managing and organizing important documents, receipts, and other records related to warehouse transactions. </p>
+                    <p>● Receiving imported goods or raw materials to the warehouse. </p>
+                    <p>● Internal driver, transferring from Factory to Factory. </p>
+                    <div class="row g-2">
+                        <div class="col-12 col-md-6">
+                        <img src="jd-1.jpg" alt="Profile Picture" class="img-fluid rounded shadow-sm">
+                        </div>
+                        <div class="col-12 col-md-6">
+                        <img src="jd-2.jpg" alt="Profile Picture" class="img-fluid rounded shadow-sm">
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <img src="jd-3.jpg" alt="Profile Picture" class="img-fluid rounded shadow-sm">
+                    </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content shadow">
+                    <h5>2026 - City Hall of Binan</h5>
+                    <strong>Internship</strong>
+                    <p>● System Developer</p>
+                    <p>● IT Support</p>
+                    <div class="row g-2">
+                        <div class="col-12 col-md-6">
+                        <img src="binan-cert.jpg" alt="Profile Picture" class="img-fluid rounded shadow-sm">
+                        </div>
+                        <div class="col-12 col-md-6">
+                        <img src="docu.jpg" alt="Profile Picture" class="img-fluid rounded shadow-sm">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
                 </div>
             </div>
 
